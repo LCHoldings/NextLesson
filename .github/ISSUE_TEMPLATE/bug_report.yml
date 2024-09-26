@@ -1,0 +1,44 @@
+name: "\U0001F41E Issue/Bug report"
+description: Having trouble with the app? Let us know so we can fix it!
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **IMPORTANT!**
+
+        This is only for reporting bugs and issues. Before submitting, make sure you are running the
+        latest version of the app and issues are still occuring after clearing cache in settings.
+
+        Please be as descriptive as possible when filling out.
+  - type: input
+    id: build
+    attributes:
+      label: App Build (See Settings Page)
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: App Version (See Settings Page)
+    validations:
+      required: true
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to reproduce
+      description: |
+        In order for us to be able to fix the issue, we need to be able to reproduce it. In the text area below, describe exactly how to reproduce the issue that occurs to you. A screen recording or such can also be uploaded on something like Google Drive and linked. [Markdown](https://guides.github.com/features/mastering-markdown/) can be used to format the text.
+      placeholder: Steps to reproduce
+    validations:
+      required: true
+  - type: textarea
+    id: device
+    attributes:
+      label: Device
+      description: List the device the issue is happening on, aswell as OS version.
+      placeholder: iPhone 12 - IOS 18.1 Beta 5
+  - type: textarea
+    id: additional-comments
+    attributes:
+      label: Any additional comments?
+      description: e.g. some info about how you ran into this bug.

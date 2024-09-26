@@ -8,20 +8,29 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var municipalityManager: MunicipalityManager
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-            Button("Button") {
-                print("hola")
-            }
+        TabView {
+            HomePage()
+                .tabItem {
+                    Image(systemName: "house")
+                    Text("Homepage")
+                }
+            SchedulesPage()
+                .tabItem {
+                    Image(systemName: "calendar.badge.clock")
+                    Text("Schedules")
+                }
+            SettingsPage()
+                .tabItem {
+                    Image(systemName: "gear")
+                    Text("Settings")
+                }
         }
-        .padding()
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView().environmentObject(MunicipalityManager())
 }

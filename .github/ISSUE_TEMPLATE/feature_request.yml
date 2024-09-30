@@ -1,0 +1,25 @@
+name: "\U0001F4AC Feature Request"
+description: Got an idea for a feature that should be added?
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **IMPORTANT!**
+
+        This is only for ideas for additions for the app, any issues are to be reported separately.
+
+        Please be as descriptive as possible when filling out.
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: |
+        Describe your idea the best you can and include every detail possible to make it easier to implement!
+      placeholder: Description
+    validations:
+      required: true
+  - type: textarea
+    id: additional-comments
+    attributes:
+      label: Any additional comments?
+      description: 

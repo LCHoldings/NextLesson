@@ -1,5 +1,6 @@
 name: "\U0001F41E Issue/Bug report"
 description: Having trouble with the app? Let us know so we can fix it!
+labels: bug
 body:
   - type: markdown
     attributes:

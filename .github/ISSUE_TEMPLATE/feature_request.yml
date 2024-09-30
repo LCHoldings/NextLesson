@@ -1,5 +1,6 @@
 name: "\U0001F4AC Feature Request"
 description: Got an idea for a feature that should be added?
+labels: enhancement
 body:
   - type: markdown
     attributes:

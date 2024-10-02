@@ -24,13 +24,13 @@ class SchoolClassManager: ObservableObject {
     }
     
     func refreshItemsFromNetwork() {
-        let urlString = "https://km7jvdrp-3000.euw.devtunnels.ms/api/v1/classes/\(municipality)/\(unitGuid)"
-        
+        let urlString = "https://nextlesson-api-iqmm.onrender.com/v1/classes/\(municipality)/\(unitGuid)"
         AF.request(urlString)
-            .responseDecodable(of: SchoolClassResponse.self) { response in
+            .validate()
+            .responseDecodable(of: [SchoolClass].self) { response in
                 switch response.result {
-                case .success(let schoolClassResponse):
-                    self.schoolClasses = schoolClassResponse.classes
+                case .success(let schoolClassesTemp):
+                    self.schoolClasses = schoolClassesTemp
                 case .failure(let error):
                     self.schoolClasses = [] // Clear previous data
                     print("Error: \(error)")

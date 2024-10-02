@@ -7,10 +7,6 @@
 
 import Foundation
 
-struct SchoolClassResponse: Decodable {
-    let classes: [SchoolClass]
-}
-
 struct SchoolClass: Decodable, Identifiable {
     let groupGuid: String
     let groupName: String

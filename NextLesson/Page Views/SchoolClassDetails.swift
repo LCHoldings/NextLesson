@@ -13,8 +13,12 @@ struct SchoolClassDetailsView: View {
     
     @StateObject private var schoolClassManager = SchoolClassManager()
     @StateObject private var scheduleManager = ScheduleManager()
+    @StateObject private var scheduleStore = ScheduleStore()
     @State private var isLoading: Bool = true
     @State private var hasTimedOut: Bool = false
+    @State private var customClassName: String = ""
+    
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         VStack {
@@ -25,10 +29,43 @@ struct SchoolClassDetailsView: View {
                 Text("No classes available for this school.")
                     .padding()
             } else {
-                List(schoolClassManager.schoolClasses) { schoolClass in
-                    Button(schoolClass.groupName) {
-                        print("Get and save schedule: \(schoolClass.groupName)")
+                List {
+                    Section(header: Text("Custom Class")) {
+                        TextField("Mu22A", text: $customClassName)
+                        Button("Submit") {
+                            scheduleManager.municipality = municipality.namn
+                            scheduleManager.scheduleId = customClassName
+                            scheduleManager.unitGuid = school.unitGuid // Triggers refresh automatically
+                            
+                            scheduleManager.refreshItemsFromNetwork { scheduleData in
+                                if let schedule = scheduleData {
+                                    scheduleStore.saveSchedule(className: customClassName, schedule: schedule)
+                                    dismiss()
+                                } else {
+                                    print("Failed to fetch schedule data.")
+                                }
+                            }
+                        }.foregroundColor(.primary)
                     }
+                    Section(header: Text("Available Classes")) {
+                        ForEach(schoolClassManager.schoolClasses) { schoolClass in
+                            Button(schoolClass.groupName) {
+                                scheduleManager.municipality = municipality.namn
+                                scheduleManager.scheduleId = schoolClass.groupName
+                                scheduleManager.unitGuid = school.unitGuid // Triggers refresh automatically
+                                
+                                scheduleManager.refreshItemsFromNetwork { scheduleData in
+                                    if let schedule = scheduleData {
+                                        scheduleStore.saveSchedule(className: schoolClass.groupName, schedule: schedule)
+                                        dismiss()
+                                    } else {
+                                        print("Failed to fetch schedule data.")
+                                    }
+                                }
+                            }.foregroundColor(.primary)
+                        }
+                    }
+                
                 }
             }
         }
@@ -49,16 +86,8 @@ struct SchoolClassDetailsView: View {
                 }
             }
         }
-        .navigationTitle("Classes in \(school.unitId)") // unitID = School Name
+        .navigationTitle("Classes in \(school.unitId)") // unitId = School Name
         .navigationBarTitleDisplayMode(.inline)
     }
 }
 
-#Preview {
-    let sampleMunicipality = Municipality(namn: "Kungälv")
-    let sampleSchool = School(unitGuid: "ZTE5NGJjMmUtYTY3Yi1mY2I1LWJmNjAtNzgyMDI0Zjg1ODJi", unitId: "Munkegärdeskolan")
-    
-    NavigationView {
-        SchoolClassDetailsView(school: sampleSchool, municipality: sampleMunicipality)
-    }
-}

@@ -7,11 +7,9 @@
 
 import Foundation
 
-struct MunicipalityResponse: Decodable {
-    let municipalities: [Municipality]
-}
-
 struct Municipality: Decodable, Identifiable, Hashable {
     let namn: String
-    let id = UUID()
+    var id: String {
+        return self.namn
+    }
 }

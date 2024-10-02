@@ -5,26 +5,26 @@
 //  Created by Simon K on 2024-09-26.
 //
 
+import SwiftData
 import Foundation
 
-// 1 million percent broken
-
-struct ScheduleResponse: Codable {
-    let schedule: Schedule
-}
-
 struct Schedule: Codable, Identifiable {
-    let data: ScheduleData
-    let unitId: String
+    let date: ScheduleDate
+    let lessonInfo: [ScheduleLessonInfo]
+    let schoolName: String
+    let lastPublished: String
+    let className: String
+    let municipality: String
     
     var id: String {
-        return self.unitId
+        return self.className
     }
 }
 
-struct ScheduleData: Codable {
-    let lessonInfo: [ScheduleLessonInfo]
-    let metadata: [ScheduleMetadata]
+struct ScheduleDate: Codable {
+    let year: Int
+    let week: Int
+    let day: Int
 }
 
 struct ScheduleLessonInfo: Codable, Identifiable {
@@ -33,13 +33,66 @@ struct ScheduleLessonInfo: Codable, Identifiable {
     let texts: [String]
     let timeEnd: String
     let timeStart: String
+    let blockName: String
     
     var id: String {
         return self.guidId
     }
 }
 
-struct ScheduleMetadata: Codable {
-    let lastPublished: String
-    let schoolName: String
+// Beyond my understanding currently
+class ScheduleStore: ObservableObject {
+    @Published var schedules: [String: Schedule] = [:]
+    @Published var favorites: [String: Bool] = [:]
+    
+    private let fileName = "schedules.json"
+    
+    init() {
+        loadSchedules()
+    }
+    
+    func saveSchedule(className: String, schedule: Schedule) {
+        schedules[className] = schedule
+        saveToFile()
+    }
+    
+    func loadSchedules() {
+        guard let data = readFromFile(fileName: fileName) else { return }
+        
+        do {
+            let loadedSchedules = try JSONDecoder().decode([String: Schedule].self, from: data)
+            self.schedules = loadedSchedules
+        } catch {
+            print("Error loading schedules: \(error)")
+        }
+    }
+    
+    private func saveToFile() {
+        do {
+            let data = try JSONEncoder().encode(schedules)
+            try data.write(to: getDocumentsDirectory().appendingPathComponent(fileName))
+        } catch {
+            print("Error saving schedules: \(error)")
+        }
+    }
+    
+    private func getDocumentsDirectory() -> URL {
+        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+    }
+    
+    
+    private func readFromFile(fileName: String) -> Data? {
+        let fileURL = getDocumentsDirectory().appendingPathComponent(fileName)
+        return try? Data(contentsOf: fileURL)
+    }
+    
+    func clearAllSchedules() {
+        schedules.removeAll()
+        saveToFile()
+    }
+    
+    func removeSchedule(for className: String) {
+        schedules.removeValue(forKey: className)
+        saveToFile()
+    }
 }

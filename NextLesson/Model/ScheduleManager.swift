@@ -8,11 +8,9 @@
 import Foundation
 import Alamofire
 
-// 1 million percent broken
-
 class ScheduleManager: ObservableObject {
     
-    @Published var scheduleData: ScheduleData? // Changed to hold the data response
+    @Published var scheduleData: Schedule?
     
     var municipality: String = ""
     var scheduleId: String = ""
@@ -24,28 +22,29 @@ class ScheduleManager: ObservableObject {
     
     init() {}
 
-    // Updated completion handler type to ScheduleData
-    func refreshItemsFromNetwork(completion: ((ScheduleData?) -> Void)? = nil) {
-        print("1: \(municipality)")
-        print("2: \(unitGuid)")
-        print("3: \(scheduleId)")
+    func refreshItemsFromNetwork(completion: ((Schedule?) -> Void)? = nil) {
+        guard !municipality.isEmpty, !unitGuid.isEmpty, !scheduleId.isEmpty else {
+            print("Invalid parameters: municipality, unitGuid, or scheduleId is missing.")
+            completion?(nil)
+            return
+        }
 
-        let urlString = "https://km7jvdrp-3000.euw.devtunnels.ms/api/v1/schedule/\(municipality)/\(unitGuid)/\(scheduleId)"
+        let urlString = "https://nextlesson-api-iqmm.onrender.com/v1/schedule/\(municipality)/\(unitGuid)/\(scheduleId)"
+        print("Fetching from URL: \(urlString)")
         
         AF.request(urlString)
-            .responseDecodable(of: ScheduleResponse.self) { response in
+            .validate()
+            .responseDecodable(of: Schedule.self) { response in
                 switch response.result {
-                case .success(let scheduleResponse):
-                    // Update the published property with the schedule data
-                    self.scheduleData = scheduleResponse.schedule.data
-                    print(self.scheduleData)
-                    completion?(self.scheduleData) // Pass the data to the completion handler
+                case .success(let schedule):
+                    self.scheduleData = schedule
+                    completion?(self.scheduleData)
                     
                 case .failure(let error):
-                    self.scheduleData = nil // Clear previous data
-                    print("Error: \(error)")
+                    self.scheduleData = nil
+                    print("Error fetching schedule: \(error.localizedDescription)")
+                    completion?(nil)
                 }
             }
     }
 }
-

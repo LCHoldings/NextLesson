@@ -51,7 +51,6 @@ struct SchoolDetails: View {
 }
 
 #Preview {
-    // Create a sample Municipality for the preview
     let sampleMunicipality = Municipality(namn: "Kungälv")
     
     return NavigationView {

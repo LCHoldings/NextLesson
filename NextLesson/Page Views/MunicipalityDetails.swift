@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MunicipalityDetails: View {
     @EnvironmentObject var municipalityManager: MunicipalityManager
+    
     @State private var customHostName: String = ""
 
     var body: some View {
@@ -22,9 +23,18 @@ struct MunicipalityDetails: View {
                 }
                 
                 Section(header: Text("Municipalities")) {
-                    ForEach(municipalityManager.municipalities) { municipality in
-                        NavigationLink(value: municipality) {
-                            Text(municipality.namn)
+                    if municipalityManager.municipalities.isEmpty {
+                        VStack {
+                            Image(systemName: "wifi.exclamationmark")
+                            Text("Check your internet connection.")
+                        }
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .padding()
+                    } else {
+                        ForEach(municipalityManager.municipalities) { municipality in
+                            NavigationLink(value: municipality) {
+                                Text(municipality.namn)
+                            }
                         }
                     }
                 }

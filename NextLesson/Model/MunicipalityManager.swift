@@ -17,13 +17,12 @@ class MunicipalityManager: ObservableObject {
     }
     
     func refreshItemsFromNetwork() {
-        AF.request("https://km7jvdrp-3000.euw.devtunnels.ms/api/v1/municipalities")
-            .responseDecodable(of: MunicipalityResponse.self) { response in
+        AF.request("https://nextlesson-api-iqmm.onrender.com/v1/municipalities")
+            .validate()
+            .responseDecodable(of: [Municipality].self) { response in
                 switch response.result {
-                case .success(let municipalityResponse):
-                    // Update the municipalities with data from the network
-                    self.municipalities = municipalityResponse.municipalities
-                    
+                case .success(let municipalities):
+                    self.municipalities = municipalities
                 case .failure(let error):
                     print("Error: \(error)")
                 }

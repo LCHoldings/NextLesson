@@ -11,6 +11,12 @@ struct SettingsPage: View {
     
     // 1:Automatic 2:Dark 3:Light
     @AppStorage("appearanceMode") private var appearanceMode: Int = 1
+        
+    @StateObject private var scheduleStore = ScheduleStore()
+    @StateObject private var nickNamesStore = NickNamesStore()
+    @StateObject private var favoriteStore = FavoriteStore()
+    
+    @State private var showingClearAllAlert: Bool = false
     
     var appVersion: String {
         return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "Unknown"
@@ -35,6 +41,18 @@ struct SettingsPage: View {
                     }
                 }
                 
+                // I need to get smarter first
+                /*Section(header: Text("Preferences")) {
+                    HStack{
+                        Image(systemName: "clock.fill")
+                            .frame(width: 20, height: 0)
+                        Picker(selection: $useCountdowns, label: Text("Use Countdowns")) {
+                            Text("Enable").tag(true)
+                            Text("Disable").tag(false)
+                        }
+                    }
+                }*/
+                
                 Section(header: Text("Information")) {
                     Button(action: {
                         if let url = URL(string: "https://github.com/LCHoldings/NextLesson") {
@@ -50,7 +68,7 @@ struct SettingsPage: View {
                     .foregroundColor(.primary)
                     
                     Button(action: {
-                        if let url = URL(string: "https://github.com/LCHoldings/NextLesson/issues/new?assignees=&labels=&projects=&template=bug_report.yml") {
+                        if let url = URL(string: "https://github.com/LCHoldings/NextLesson/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml") {
                             UIApplication.shared.open(url)
                         }
                     }) {
@@ -63,7 +81,9 @@ struct SettingsPage: View {
                     }
                     
                     Button(action: {
-                        // TODO
+                        if let url = URL(string: "https://github.com/LCHoldings/NextLesson/issues/new?assignees=&labels=enhancement&projects=&template=feature_request.yml") {
+                            UIApplication.shared.open(url)
+                        }
                     }) {
                         HStack {
                             Image(systemName: "rectangle.3.group.bubble.fill")
@@ -73,16 +93,25 @@ struct SettingsPage: View {
                     }.foregroundColor(.primary)
                 }
                 
-                Section(header: Text("Cache")) {
+                Section(header: Text("AppData")) {
                     Button(action: {
-                        // TODO: Clear and refetch cache
-                        print("Clear Cache Func")
+                        showingClearAllAlert = true
                     }) {
                         HStack {
                             Image(systemName: "trash.fill")
-                            Text("Clear Cache")
+                            Text("Clear All Data")
                         }
-                    }.foregroundColor(.primary)
+                    }
+                    .foregroundColor(.primary)
+                    .alert("Are you sure?", isPresented: $showingClearAllAlert) {
+                        Button("Clear All Data", role: .destructive) {
+                            scheduleStore.clearAllSchedules()
+                            nickNamesStore.clearAllNickNames()
+                            favoriteStore.removeFavorite()
+                        }
+                        Button("Cancel", role: .cancel) {}
+                    }
+
                 }
 
                 Section(header: Text("Credits")) {
@@ -125,7 +154,7 @@ struct SettingsPage: View {
                 
                 Section(header: Text("Build: \(appBuild)  |  Version: \(appVersion)")) {}
             }
-            .navigationBarTitle("Settings")
+            .navigationBarTitle("Settings ⚙️")
         }
     }
 }

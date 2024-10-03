@@ -24,7 +24,7 @@ class SchoolClassManager: ObservableObject {
     }
     
     func refreshItemsFromNetwork() {
-        let urlString = "https://nextlesson-api-iqmm.onrender.com/v1/classes/\(municipality)/\(unitGuid)"
+        let urlString = "https://api.nextlesson.lcholdings.net/v1/classes/\(municipality)/\(unitGuid)"
         AF.request(urlString)
             .validate()
             .responseDecodable(of: [SchoolClass].self) { response in

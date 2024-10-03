@@ -29,8 +29,7 @@ class ScheduleManager: ObservableObject {
             return
         }
 
-        let urlString = "https://nextlesson-api-iqmm.onrender.com/v1/schedule/\(municipality)/\(unitGuid)/\(scheduleId)"
-        print("Fetching from URL: \(urlString)")
+        let urlString = "https://api.nextlesson.lcholdings.net/v1/schedule/\(municipality)/\(unitGuid)/\(scheduleId)"
         
         AF.request(urlString)
             .validate()

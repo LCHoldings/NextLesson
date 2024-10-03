@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A508E9122CA5D1D800E4D294 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A508E9112CA5D1D800E4D294 /* Alamofire */; };
+		A584FBEE2CAED4AD00A0B7B3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A584FBED2CAED4AD00A0B7B3 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,7 +35,6 @@
 
 /* Begin PBXFileReference section */
 		A507F3A62CA4897100D50A69 /* NextLesson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NextLesson.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5A3820E2CAC5A090087FA7C /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		A5A382102CAC5A090087FA7C /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -65,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A508E9122CA5D1D800E4D294 /* Alamofire in Frameworks */,
+				A584FBEE2CAED4AD00A0B7B3 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,7 +91,6 @@
 		A5A3820D2CAC5A090087FA7C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A5A3820E2CAC5A090087FA7C /* WidgetKit.framework */,
 				A5A382102CAC5A090087FA7C /* SwiftUI.framework */,
 			);
 			name = Frameworks;
@@ -120,7 +118,7 @@
 			);
 			name = NextLesson;
 			packageProductDependencies = (
-				A508E9112CA5D1D800E4D294 /* Alamofire */,
+				A584FBED2CAED4AD00A0B7B3 /* Alamofire */,
 			);
 			productName = NextLesson;
 			productReference = A507F3A62CA4897100D50A69 /* NextLesson.app */;
@@ -147,11 +145,12 @@
 			knownRegions = (
 				en,
 				Base,
+				sv,
 			);
 			mainGroup = A507F39D2CA4897100D50A69;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				A508E9102CA5D1D800E4D294 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				A584FBEC2CAED4AD00A0B7B3 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A507F3A72CA4897100D50A69 /* Products */;
@@ -243,6 +242,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -299,6 +299,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -309,18 +310,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"NextLesson/Preview Content\"";
-				DEVELOPMENT_TEAM = YS5JW56HT6;
+				DEVELOPMENT_TEAM = P6PV2R9443;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NextLesson/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "NästaLektion";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -330,9 +332,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = "1.0.0-dev";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lcholdings.dev.NextLesson;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.lazyllama.nextlesson;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -345,18 +348,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"NextLesson/Preview Content\"";
-				DEVELOPMENT_TEAM = YS5JW56HT6;
+				DEVELOPMENT_TEAM = P6PV2R9443;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NextLesson/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "NästaLektion";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -366,9 +370,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = "1.0.0-dev";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lcholdings.dev.NextLesson;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.lazyllama.nextlesson;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -399,7 +404,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		A508E9102CA5D1D800E4D294 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		A584FBEC2CAED4AD00A0B7B3 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -410,9 +415,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A508E9112CA5D1D800E4D294 /* Alamofire */ = {
+		A584FBED2CAED4AD00A0B7B3 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A508E9102CA5D1D800E4D294 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = A584FBEC2CAED4AD00A0B7B3 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */

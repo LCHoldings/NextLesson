@@ -123,7 +123,7 @@ struct SettingsPage: View {
                         HStack {
                             Image(systemName: "swift")
                                 .frame(width: 20, height: 0)
-                            Text("Lazyllama - App Development")
+                            Text("Simon K - App Development")
                         }
                     }.foregroundColor(.primary)
                     

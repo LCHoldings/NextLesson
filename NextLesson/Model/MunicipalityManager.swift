@@ -17,7 +17,7 @@ class MunicipalityManager: ObservableObject {
     }
     
     func refreshItemsFromNetwork() {
-        AF.request("https://nextlesson-api-iqmm.onrender.com/v1/municipalities")
+        AF.request("https://api.nextlesson.lcholdings.net/v1/municipalities")
             .validate()
             .responseDecodable(of: [Municipality].self) { response in
                 switch response.result {

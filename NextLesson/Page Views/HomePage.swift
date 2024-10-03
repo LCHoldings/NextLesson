@@ -65,11 +65,11 @@ private func currentGreeting() -> String {
     let hour = Calendar.current.component(.hour, from: Date())
     switch hour {
     case 0..<12:
-        return "Good Morning! ☀️"
+        return NSLocalizedString("greeting_morning", comment: "Morning greeting")
     case 12..<18:
-        return "Hello There! 👋🏻"
+        return NSLocalizedString("greeting_afternoon", comment: "Afternoon greeting")
     default:
-        return "Good Evening! 🌙"
+        return NSLocalizedString("greeting_evening", comment: "Evening greeting")
     }
 }
 

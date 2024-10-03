@@ -1,0 +1,702 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "(%@)" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "(%@)"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "%@ - %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ - %2$@"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ - %2$@"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "Add Schedule" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lägg till Schema"
+          }
+        }
+      }
+    },
+    "AppData" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AppData"
+          }
+        }
+      }
+    },
+    "Appearance" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utseende"
+          }
+        }
+      }
+    },
+    "Are you sure?" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Är du säker?"
+          }
+        }
+      }
+    },
+    "At least 3 characters" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Minst 3 bokstäver."
+          }
+        }
+      }
+    },
+    "Automatic" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Automatiskt"
+          }
+        }
+      }
+    },
+    "Available Classes" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klasser"
+          }
+        }
+      }
+    },
+    "Balazs H - Skola24 API Reference" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Balazs H - Skola24 API Referens"
+          }
+        }
+      }
+    },
+    "Begins At: %@" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Börjar: %@"
+          }
+        }
+      }
+    },
+    "Build: %@  |  Version: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Build: %1$@  |  Version: %2$@"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Build: %1$@  | Version: %2$@"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "Cancel" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avbryt"
+          }
+        }
+      }
+    },
+    "Change Nickname" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Byt smeknamn"
+          }
+        }
+      }
+    },
+    "Check your internet connection." : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kolla din internet uppkoppling."
+          }
+        }
+      }
+    },
+    "Classes in %@" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klasser på %@"
+          }
+        }
+      }
+    },
+    "Classroom: %@" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sal: %@"
+          }
+        }
+      }
+    },
+    "Clear All Data" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rensa All Data"
+          }
+        }
+      }
+    },
+    "Color Scheme" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Färg Tema"
+          }
+        }
+      }
+    },
+    "Credits" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Credits"
+          }
+        }
+      }
+    },
+    "Current Class: %@" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pågående Klass: %@"
+          }
+        }
+      }
+    },
+    "Current Lesson" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pågående Klass"
+          }
+        }
+      }
+    },
+    "Custom Class" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Personlig Kod/Klass"
+          }
+        }
+      }
+    },
+    "Custom Hostname" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annan Kommun/Skola"
+          }
+        }
+      }
+    },
+    "Cyber - Backend" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cyber - Backend"
+          }
+        }
+      }
+    },
+    "Dark" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mörkt"
+          }
+        }
+      }
+    },
+    "Delete Class" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ta bort Klass"
+          }
+        }
+      }
+    },
+    "Ends At: %@" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slutar: %@"
+          }
+        }
+      }
+    },
+    "Enter a new nickname for the class." : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Välj ett nytt smeknamn för klassen."
+          }
+        }
+      }
+    },
+    "Feature Request" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Förslags Inskickning"
+          }
+        }
+      }
+    },
+    "GitHub Repository" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GitHub Repository"
+          }
+        }
+      }
+    },
+    "greeting_afternoon" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hello There! 👋🏻"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hej där! 👋🏻"
+          }
+        }
+      }
+    },
+    "greeting_evening" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Good Evening! 🌙"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "God Kväll! 🌙"
+          }
+        }
+      }
+    },
+    "greeting_morning" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Good Morning! ☀️"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "God Morgon! ☀️"
+          }
+        }
+      }
+    },
+    "Homepage" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hem"
+          }
+        }
+      }
+    },
+    "Hostname" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kommun/Skola"
+          }
+        }
+      }
+    },
+    "Information" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Information"
+          }
+        }
+      }
+    },
+    "Issue/Bug Reporting" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Problem/Bugg Rapport"
+          }
+        }
+      }
+    },
+    "kungalv.skola24.se" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kungalv.skola24.se"
+          }
+        }
+      }
+    },
+    "Light" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ljust"
+          }
+        }
+      }
+    },
+    "Loading school classes..." : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Laddar skolklasser…"
+          }
+        }
+      }
+    },
+    "Loading schools..." : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Laddar skolor…"
+          }
+        }
+      }
+    },
+    "Mu22A" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mu22A"
+          }
+        }
+      }
+    },
+    "Municipalities" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kommuner"
+          }
+        }
+      }
+    },
+    "New Schedule" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nytt Schema"
+          }
+        }
+      }
+    },
+    "Next Class: %@" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nästa Lektion: %@"
+          }
+        }
+      }
+    },
+    "Next Lesson" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nästa Lektion"
+          }
+        }
+      }
+    },
+    "No classes available for this school." : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inga klasser hittades för denna skola."
+          }
+        }
+      }
+    },
+    "No Nickname" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inget Smeknamn"
+          }
+        }
+      }
+    },
+    "No Schedules Available" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inga Scheman"
+          }
+        }
+      }
+    },
+    "No schools available." : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inga skolor tillgängliga."
+          }
+        }
+      }
+    },
+    "No upcoming classes" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inga kommande lektioner."
+          }
+        }
+      }
+    },
+    "No upcoming lessons today." : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inga kommande lektioner för idag."
+          }
+        }
+      }
+    },
+    "Other: %@" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annat: %@"
+          }
+        }
+      }
+    },
+    "Remove Class" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ta bort klass"
+          }
+        }
+      }
+    },
+    "Save Nickname" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spara Smeknamn"
+          }
+        }
+      }
+    },
+    "Saved Schedules" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sparade Scheman"
+          }
+        }
+      }
+    },
+    "Schedules" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scheman"
+          }
+        }
+      }
+    },
+    "Schedules 🗓️" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scheman 🗓️"
+          }
+        }
+      }
+    },
+    "Schools in %@" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skolor i %@"
+          }
+        }
+      }
+    },
+    "Settings" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inställningar"
+          }
+        }
+      }
+    },
+    "Settings ⚙️" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inställningar ⚙️"
+          }
+        }
+      }
+    },
+    "Simon K - App Development" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Simon K - App Utveckling"
+          }
+        }
+      }
+    },
+    "Submit" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skicka"
+          }
+        }
+      }
+    },
+    "Teacher: %@" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lärare: %@"
+          }
+        }
+      }
+    },
+    "You haven't added any schedules yet. Try adding one from the schedule section." : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Du har inte lagt till några scheman än. Lägg till ett schema genom att gå till Schema sidan."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

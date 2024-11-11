@@ -427,6 +427,16 @@
         }
       }
     },
+    "Last edited: %@" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Senast ändrad: %@"
+          }
+        }
+      }
+    },
     "Light" : {
       "localizations" : {
         "sv" : {

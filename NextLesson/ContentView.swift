@@ -11,8 +11,7 @@ struct ContentView: View {
     @EnvironmentObject var municipalityManager: MunicipalityManager
     
     var body: some View {
-        
-        TabView {
+        TabView() {
             HomePage()
                 .tabItem {
                     Image(systemName: "house")

@@ -11,6 +11,7 @@ struct ScheduleDetail: View {
     var schedule: Schedule
     
     @StateObject private var scheduleStore = ScheduleStore()
+    @StateObject private var scheduleManager = ScheduleManager()
     @StateObject private var nickNamesStore = NickNamesStore()
     @StateObject private var favoriteStore = FavoriteStore()
     
@@ -87,6 +88,14 @@ struct ScheduleDetail: View {
                 }
             }
             Spacer()
+            VStack {
+                Text(schedule.municipality)
+                    .font(.headline)
+                    .foregroundColor(.gray)
+                Text("Last edited: \(convertDate(date: schedule.lastPublished))")
+                    .font(.headline)
+                    .foregroundColor(.gray)
+            }.padding()
         }
         .padding()
         .navigationTitle(schedule.className)
@@ -106,7 +115,22 @@ struct ScheduleDetail: View {
                     }
                 }
                 
-
+                Button(action: {
+                    scheduleManager.municipality = schedule.municipality
+                    scheduleManager.scheduleId = schedule.className
+                    scheduleManager.unitGuid = schedule.unitGuid // Triggers refresh automatically
+                    
+                    scheduleManager.refreshItemsFromNetwork { scheduleData in
+                        if let schedule = scheduleData {
+                            scheduleStore.saveSchedule(className: schedule.className, schedule: schedule)
+                            dismiss()
+                        } else {
+                            print("Failed to fetch schedule data.")
+                        }
+                    }
+                }) {
+                    Image(systemName: "arrow.clockwise")
+                }
 
                 Button(action: {
                     removeClassAlert = true
@@ -159,6 +183,22 @@ struct ScheduleDetail: View {
             findCurrentLesson()
             favoriteStore.loadFavoriteSchedule()
         }
+    }
+    
+    private func convertDate(date: String) -> String {
+        let dateFormatter = DateFormatter()
+        let dateToReadable = DateFormatter()
+        
+        dateToReadable.dateFormat = "yyyy-MM-dd HH:mm"
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        dateFormatter.locale = Locale(identifier: "sv_SE")
+        
+        guard let convertedDate = dateFormatter.date(from: date) else {
+            return "Unknown Date"
+        }
+        
+        return dateToReadable.string(from: convertedDate)
     }
     
     private func findNextLesson() {

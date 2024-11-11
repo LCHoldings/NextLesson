@@ -15,6 +15,7 @@ struct Schedule: Codable, Identifiable {
     let lastPublished: String
     let className: String
     let municipality: String
+    let unitGuid: String
     
     var id: String {
         return self.className
@@ -62,6 +63,7 @@ class ScheduleStore: ObservableObject {
         do {
             let loadedSchedules = try JSONDecoder().decode([String: Schedule].self, from: data)
             self.schedules = loadedSchedules
+            objectWillChange.send()
         } catch {
             print("Error loading schedules: \(error)")
         }

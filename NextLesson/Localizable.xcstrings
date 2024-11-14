@@ -14,12 +14,6 @@
     },
     "%@ - %@" : {
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ - %2$@"
-          }
-        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -35,6 +29,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lägg till Schema"
+          }
+        }
+      }
+    },
+    "App Language" : {
+      "localizations" : {
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App Språk"
           }
         }
       }
@@ -121,12 +125,6 @@
     },
     "Build: %@  |  Version: %@" : {
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Build: %1$@  |  Version: %2$@"
-          }
-        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",

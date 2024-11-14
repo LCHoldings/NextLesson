@@ -83,7 +83,7 @@ struct ScheduleCard: View {
                 .padding(.bottom, 15)
                 .padding(.horizontal, 15)
             }
-            .background(LinearGradient(gradient: Gradient(colors: [Color("AccentColor"), Color.blue.opacity(0.7)]), startPoint: .topLeading, endPoint: .bottomTrailing))
+            .background(LinearGradient(gradient: Gradient(colors: [Color("AccentColor").opacity(0.4), Color.blue.opacity(0.3)]), startPoint: .topLeading, endPoint: .bottomTrailing))
             .cornerRadius(20)
             .shadow(color: Color.black.opacity(0.2), radius: 1, x: 0, y: 2)
             .frame(height: 140)

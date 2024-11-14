@@ -23,9 +23,10 @@ struct ScheduleDetail: View {
     @State private var removeClassAlert: Bool = false
     @State private var newNickname: String = ""
     
+    
     var body: some View {
         VStack(spacing: 20) {
-            HStack {
+            VStack {
                 if let currentLesson = currentLesson {
                     VStack(alignment: .leading, spacing: 10) {
                         Text("Current Lesson")
@@ -35,13 +36,17 @@ struct ScheduleDetail: View {
                         Text(currentLesson.texts.first ?? "Unknown")
                             .font(.title2)
                         
-                        Text("Teacher: \(currentLesson.texts[1])")
-                            .font(.subheadline)
-                        
-                        Text("Classroom: \(currentLesson.texts[2])")
-                            .font(.subheadline)
-                        
-                        if currentLesson.texts.count > 4 && !currentLesson.texts[3].isEmpty {
+                        if currentLesson.texts.count > 1 && !currentLesson.texts[1].isEmpty {
+                            Text("Teacher: \(currentLesson.texts[1])")
+                                .font(.subheadline)
+                        }
+
+                        if currentLesson.texts.count > 2 && !currentLesson.texts[2].isEmpty {
+                            Text("Classroom: \(currentLesson.texts[2])")
+                                .font(.subheadline)
+                        }
+
+                        if currentLesson.texts.count > 3 && !currentLesson.texts[3].isEmpty {
                             Text("Other: \(currentLesson.texts[3])")
                                 .font(.subheadline)
                         }
@@ -53,7 +58,7 @@ struct ScheduleDetail: View {
                             .font(.subheadline)
                     }
                     .padding()
-                    .background(RoundedRectangle(cornerRadius: 10).fill(Color.blue.opacity(0.1)))
+                    .background(RoundedRectangle(cornerRadius: 10).fill(Color.blue.opacity(0.2)))
                 }
                 if let nextLesson = nextLesson {
                     VStack(alignment: .leading, spacing: 10) {
@@ -64,13 +69,17 @@ struct ScheduleDetail: View {
                         Text(nextLesson.texts.first ?? "Unknown")
                             .font(.title2)
                         
-                        Text("Teacher: \(nextLesson.texts[1])")
-                            .font(.subheadline)
-                        
-                        Text("Classroom: \(nextLesson.texts[2])")
-                            .font(.subheadline)
-                        
-                        if nextLesson.texts.count > 4 && !nextLesson.texts[3].isEmpty {
+                        if nextLesson.texts.count > 1 && !nextLesson.texts[1].isEmpty {
+                            Text("Teacher: \(nextLesson.texts[1])")
+                                .font(.subheadline)
+                        }
+
+                        if nextLesson.texts.count > 2 && !nextLesson.texts[2].isEmpty {
+                            Text("Classroom: \(nextLesson.texts[2])")
+                                .font(.subheadline)
+                        }
+
+                        if nextLesson.texts.count > 3 && !nextLesson.texts[3].isEmpty {
                             Text("Other: \(nextLesson.texts[3])")
                                 .font(.subheadline)
                         }
@@ -79,7 +88,7 @@ struct ScheduleDetail: View {
                             .font(.subheadline)
                     }
                     .padding()
-                    .background(RoundedRectangle(cornerRadius: 10).fill(Color.blue.opacity(0.1)))
+                    .background(RoundedRectangle(cornerRadius: 10).fill(Color.blue.opacity(0.2)))
                 } else {
                     Text("No upcoming lessons today.")
                         .font(.headline)

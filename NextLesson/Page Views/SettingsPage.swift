@@ -39,6 +39,17 @@ struct SettingsPage: View {
                             Text("Light").tag(3)
                         }
                     }
+                    Button(action: {
+                        guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else {return}
+                        UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
+                    }) {
+                        HStack {
+                            Image(systemName: "globe")
+                                .frame(width: 20, height: 0)
+                            Text("App Language")
+                        }
+                    }
+                    .foregroundColor(.primary)
                 }
                 
                 // I need to get smarter first
